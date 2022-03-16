@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+    <description/>
+    <keepDependencies/>
+    <properties/>
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@4.2.2">
+        <configVersion>2</configVersion>
+        <userRemoteConfig>
+            <hudson.plugins.git.UserRemoteConfig>
+                <url>https://github.com/MisterBiscuit/spring-jenkins.git</url>
+            </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfig>
+        <branches>
+            <hudson.plugins.git.BranchSpec>
+                <name>*/master</name>
+            </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="list"/>
+        <extensions/>
+    </scm>
+    <canRoam>true</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <triggers/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.77">
+            <targets>createJobs.groovy</targets>
+            <usingScriptText>false</usingScriptText>
+            <sandbox>false</sandbox>
+            <ignoreExisting>false</ignoreExisting>
+            <ignoreMissingFiles>fales</ignoreMissingFiles>
+            <failOnMissingPluing>false</failOnMissingPluing>
+            <failOnSeedCollision>false</failOnSeedCollision>
+            <unstableOnDeprecation>false</unstableOnDeprecation>
+            <removedJobAction>IGNORE</removedJobAction>
+            <removedViewAction>IGNORE</removedViewAction>
+            <removedConfigFilesAction>IGNORE</removedConfigFilesAction>
+            <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+        </javaposse.jobdsl.plugin.ExecuteDslScripts>
+    </builders>
+    <publishers/>
+    <buildWrappers/>
+</project>
